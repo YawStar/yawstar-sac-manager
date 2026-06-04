@@ -59,4 +59,4 @@ Open your terminal or command prompt and run:
 git clone https://github.com/YawStar/yawstar-sac-manager.git
 cd yawstar-sac-manager
 pip install -r requirement.txt
-Lunch.bat
+Launcher.bat
