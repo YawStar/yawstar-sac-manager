@@ -52,8 +52,7 @@ Running inside a `venv` provides two major benefits:
 ## 💻 Installation & Setup
 
 ## Follow these step-by-step instructions to clone, configure the virtual environment, and run the application.
-1. **Clone the Repository**
-Open your terminal or command prompt and run:
+1. **Clone the Repository and change directory**
 ```bash
 git clone https://github.com/YawStar/yawstar-sac-manager.git
 cd yawstar-sac-manager
