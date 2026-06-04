@@ -80,5 +80,8 @@ pip install -r requirements.txt
 
 5. **Launch**
 ```bash
+Launcher.bat
+```
+```bash
 .\Launcher.bat
 ```
