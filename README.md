@@ -6,6 +6,12 @@ Developed entirely in Python using `CustomTkinter` and `pystray`, this tool leve
 
 ---
 
+## 📸 Screenshots
+
+| ![Screenshot](Assets/Screenshot.png)
+
+---
+
 ## ✨ Features
 
 - **Instant Toggle:** Change SAC states (ON, Evaluation, OFF) instantly without needing a system restart.
@@ -81,3 +87,11 @@ pip install -r requirements.txt
 ```bash
 .\Launcher.bat
 ```
+
+---
+
+## 📧 Support & Contact
+
+* **Official Website:** [https://yawstardancebox.github.io](https://yawstardancebox.github.io/)
+* **Email:** [Contact me via Email](mailto:yawstar.2009@gmail.com)
+* **Developer:** YawHackka (YawStar)
