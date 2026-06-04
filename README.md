@@ -59,6 +59,7 @@ cd yawstar-sac-manager
 ```
 
 2. **Create Virtual Environment**
+
 ```bash
 python -m venv venv
 ```
@@ -66,22 +67,17 @@ python -m venv venv
 3. **Activate Virtual Environment**  
 
 ```bash
-venv\scripts\activate
-```
-
-```bash
 .\venv\scripts\activate
 ```
 
 4. **Install dependencies**
+
 ```bash
 pip install -r requirements.txt
 ```
 
 5. **Launch**
-```bash
-Launcher.bat
-```
+
 ```bash
 .\Launcher.bat
 ```
