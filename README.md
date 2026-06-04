@@ -51,12 +51,49 @@ Running inside a `venv` provides two major benefits:
 
 ## 💻 Installation & Setup
 
-Follow these step-by-step instructions to clone, configure the virtual environment, and run the application.
+### Follow these step-by-step instructions to clone, configure the virtual environment, and run the application.
 
-### 1. Clone the Repository
+#### 1. Clone the Repository
 Open your terminal or command prompt and run:
 ```bash
 git clone https://github.com/YawStar/yawstar-sac-manager.git
 cd yawstar-sac-manager
-pip install -r requirement.txt
+```
+
+#### 2. Create Virtual Environment 
+```bash
+python -m venv venv
+```
+
+#### 3. Activate Virtual Environment
+If you  are using cmd
+```bash
+venv\scripts\activate
+```
+
+or
+---
+
+if you are using Terminal or Powershell
+```bash
+.\venv\scripts\activate
+```
+
+#### 4. Install dependencies
+```bash
+pip install -r requirements.txt
+```
+
+#### 5. Launch 
+cmd
+```bash
 Launcher.bat
+```
+
+or
+---
+
+Terminal or Powershell 
+```bash
+.\Launcher.bat
+```
