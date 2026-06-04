@@ -8,7 +8,7 @@ Developed entirely in Python using `CustomTkinter` and `pystray`, this tool leve
 
 ## 📸 Screenshots
 
-| ![Screenshot](Assets/Screenshot.png)
+![Screenshot](Assets/Screenshot.png)
 
 ---
 
