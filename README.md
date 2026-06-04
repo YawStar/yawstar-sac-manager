@@ -1,5 +1,9 @@
 # YawStar SAC Manager
 
+![Platform](https://img.shields.io/badge/Platform-Windows-0078D6?style=for-the-badge&logo=windows)
+![Version](https://img.shields.io/badge/Version-1.0.0.10-00A9E0?style=for-the-badge)
+![License](https://img.shields.io/badge/License-MIT-brightgreen?style=for-the-badge)
+
 An advanced, lightweight, and real-time GUI utility designed to manage Windows 11 **Smart App Control (SAC)** and **Windows Defender Application Control (WDAC)** states without requiring a system reboot. 
 
 Developed entirely in Python using `CustomTkinter` and `pystray`, this tool leverages enterprise-grade Code Integrity mechanisms to toggle SAC settings instantly.
