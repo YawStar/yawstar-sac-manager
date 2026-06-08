@@ -7,6 +7,7 @@ cls
 
 echo ========================================
 echo      Setup for YawStar SAC Manager
+echo            version 1.0.0.11
 echo ========================================
 echo.
 
@@ -226,7 +227,7 @@ if not exist "Launcher.bat" (
         echo Task [10] --- Done
         echo.
         echo ========================================
-        echo Setup Complete!
+        echo             Setup Complete!
         echo ========================================
         timeout /t 3 /nobreak >nul
         Launcher.bat
@@ -234,7 +235,7 @@ if not exist "Launcher.bat" (
 ) else (
     echo.
     echo ========================================
-    echo Setup Complete!
+    echo             Setup Complete!
     echo ========================================
     timeout /t 3 /nobreak >nul
     Launcher.bat
