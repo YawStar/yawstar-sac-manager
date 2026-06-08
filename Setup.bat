@@ -19,6 +19,9 @@ if %errorlevel% equ 0 (
     if !errorlevel! equ 0 (
         SET "PYTHON_PATH=python"
         echo [INFO] Python 3.11 is already installed.
+        echo Task [1] --- Done.
+        echo Task [2] --- Done.
+        echo.
         goto :check_venv
     )
 ) else if exist "%localappdata%\Programs\Python\Python311\python.exe" (
@@ -37,6 +40,7 @@ if %errorlevel% equ 0 (
 :downloadPY
 cls
 echo [1] Downloading Python 3.11.9. Please wait...
+echo.
 powershell -Command "Invoke-WebRequest -Uri 'https://www.python.org/ftp/python/3.11.9/python-3.11.9-amd64.exe' -OutFile '%temp%\python-3.11.9-amd64.exe' -ErrorAction Stop
 if %errorlevel% neq 0 (
     echo [ERROR] Download failed.
@@ -51,8 +55,8 @@ if %errorlevel% neq 0 (
 )
 
 
-:installPY
 :: Python ကို စတင် Install လုပ်
+:installPY
 echo [2] Installing Python 3.11.9. Please wait...
 "%temp%\python-3.11.9-amd64.exe" /passive
 if %errorlevel% neq 0 (
@@ -173,20 +177,21 @@ if exist "requirements.txt" (
 :: Check Dependencies
 :checkDependencies
 echo [INFO] Checking Dependencies. Please wait...
-pip list | findstr /i "customtkiter Pillow pystray"
-
-if !errorlevel! equ 0 (
+pip list 2>nul | findstr /i "customtkinter Pillow pystray" >nul
+if %errorlevel% equ 0 (
+    echo All packages are installed!
     goto :checkYS_SAC_Manager_Script
 ) else (
+    echo Some packages are missing!
     goto :installDependencies
 )
 
-
+:: လိုအပ်တဲ့ Packages တွေ install
 :installDependencies
 echo [6] Installing packages. Please wait...
 echo.
 pip install -r requirements.txt
-if !errorlevel! equ 0 (
+if %errorlevel% equ 0 (
     echo [SUCCESS] All packages installed successfully!
     echo Task [6] --- Done.
     echo.
