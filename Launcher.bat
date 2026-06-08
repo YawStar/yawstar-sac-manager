@@ -11,7 +11,7 @@ echo ========================================
 echo.
 
 :: Check if Powershell installed
-where powershell >nul
+where powershell
 
 if %errorlevel% equ 1 (
     color 04
@@ -69,7 +69,6 @@ echo.
 
 :: venv ထဲက pythonw.exe ကို သုံးပြီး Background မှာ Run
 start "" "venv\Scripts\pythonw.exe" "YS_SAC_Manager.py"
-timeout /t 3 >nul
 exit /b 0
 
 :DownloadSetup
