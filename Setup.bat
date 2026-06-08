@@ -174,7 +174,7 @@ if exist "requirements.txt" (
 :checkDependencies
 echo [INFO] Checking Dependencies. Please wait...
 pip list | findstr /i "customtkiter Pillow pystray"
-echo ErrorLevel=!errorlevel!
+
 if !errorlevel! equ 0 (
     goto :checkYS_SAC_Manager_Script
 ) else (
