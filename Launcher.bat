@@ -11,7 +11,7 @@ echo ========================================
 echo.
 
 :: Check if Powershell installed
-where powershell
+where powershell >nul
 
 if %errorlevel% equ 1 (
     color 04
@@ -25,7 +25,10 @@ if %errorlevel% equ 1 (
 if not exist "Assets\Main_Icon.ico" (
     color 04
 	echo [ERROR] 'Assets\Main_Icon.ico' file not found!
-    echo Please download and execute setup.bat first
+    echo 1. Go to YawStar SAC Manager Repository
+    echo 2. Clone or Download Repository
+    echo 3. Copy Setup.bat to "%~dp0"
+    echo 4. Double click "Setup.bat"
     timeout /t 1 /nobreak >nul
     call :DownloadSetup
     exit /b 1
@@ -66,6 +69,7 @@ echo.
 
 :: venv ထဲက pythonw.exe ကို သုံးပြီး Background မှာ Run
 start "" "venv\Scripts\pythonw.exe" "YS_SAC_Manager.py"
+timeout /t 3 >nul
 exit /b 0
 
 :DownloadSetup
