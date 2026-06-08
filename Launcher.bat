@@ -25,11 +25,6 @@ if %errorlevel% equ 1 (
 if not exist "Assets\Main_Icon.ico" (
     color 04
 	echo [ERROR] 'Assets\Main_Icon.ico' file not found!
-    echo 1. Go to YawStar SAC Manager Repository
-    echo 2. Clone or Download Repository
-    echo 3. Copy Setup.bat to "%~dp0"
-    echo 4. Double click "Setup.bat"
-    timeout /t 1 /nobreak >nul
     call :DownloadSetup
     exit /b 1
 )
@@ -73,6 +68,7 @@ exit /b 0
 
 :DownloadSetup
 echo [INFO] Downloading Setup.bat.. Please wait...
+echo.
 powershell -Command "Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/YawStar/yawstar-sac-manager/refs/heads/main/Setup.bat' -OutFile '%~dp0Setup.bat'" -ErrorAction Stop
 if %errorlevel% neq 0 (
     echo [ERROR] Download failed.
