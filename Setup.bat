@@ -4,6 +4,42 @@ cd /d "%~dp0"
 color 07
 SET PYTHON_PATH = ""
 Title "Setup for YawStar SAC Manager"
+
+:: ================================================
+:: Admin Privilege ရှိမရှိ စစ်ဆေးခြင်း
+:: ================================================
+fsutil dirty query %systemdrive% >nul 2>&1
+if %errorlevel% == 0 (
+    goto :GotAdmin
+) else (
+    goto :GetAdmin
+)
+
+:: ================================================
+:: Admin Privilege မရှိပါက Admin အဖြစ် ပြန်ပွင့်အောင်လုပ်ခြင်း
+:: ================================================
+:GetAdmin
+    echo Requesting Administrator Privilege... Click "Yes" to continue.
+    
+    :: VBScript ကိုသုံးပြီး Admin Prompt (UAC) တောင်းခံခြင်း
+    echo Set UAC = CreateObject^("Shell.Application"^) > "%temp%\getadmin.vbs"
+    echo UAC.ShellExecute "%~s0", "", "", "runas", 1 >> "%temp%\getadmin.vbs"
+    
+    "%temp%\getadmin.vbs"
+    del "%temp%\getadmin.vbs"
+    exit /B
+
+
+:GotAdmin
+:: ================================================
+:: Admin Privilege ရရှိပြီးပါက လုပ်ဆောင်မည့်နေရာ
+:: ================================================
+:: --------------------------------------------
+:: GUI (CMD Window) ရဲ့ အရွယ်အစားကို သတ်မှတ်တဲ့နေရာ
+:: cols = အလျား (စာလုံးအရေအတွက်)
+:: lines = အနံ (စာကြောင်းအရေအတွက်)
+:: --------------------------------------------
+mode con: cols=80 lines=25
 cls
 
 echo ========================================
@@ -11,6 +47,7 @@ echo      Setup for YawStar SAC Manager
 echo            version 1.0.0.11
 echo ========================================
 echo.
+
 
 :: Check Python installed
 where python >nul 2>&1
